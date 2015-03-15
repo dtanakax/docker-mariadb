@@ -63,7 +63,7 @@ git pull後に
     データ格納コンテナのDockerfileを作成
 
         FROM busybox
-        VOLUME /mariadb
+        VOLUME /var/lib/mysql
         CMD /bin/sh
 
     イメージ作成
