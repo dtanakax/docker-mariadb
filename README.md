@@ -92,7 +92,7 @@ git pull後に
 
 ### Figでの使用方法
 
-[Figとは？](http://www.fig.sh/ "Dockerとは？")  
+[Figとは](http://www.fig.sh/ "Figとは")  
 
     以下はWordpress構成サンプル
 
@@ -105,6 +105,7 @@ git pull後に
             - "8082:443"
           volumes_from:
             - storage
+            - log
          
         db:
           image: tanaka0323/mariadb
@@ -115,13 +116,17 @@ git pull後に
             DB_PASSWORD: wppass
           volumes_from:
             - storage
+            - log
          
         storage:
           image: tanaka0323/wordpress
           volumes:
             - /var/www/html
             - /var/lib/mysql
-            - /var/log/nginx
-            - /var/log/php-fpm
-            - /var/log/mariadb
+
+        log:
+          image: tanaka0323/syslog
+          volumes:
+            - /dev
+            - /var/log
 
