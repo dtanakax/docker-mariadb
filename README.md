@@ -94,39 +94,37 @@ git pull後に
 
 [Figとは](http://www.fig.sh/ "Figとは")  
 
-    以下はWordpress構成サンプル
+以下はWordpress構成サンプル
 
-        web:
-          image: tanaka0323/nginx-php
-          links:
-            - db
-          ports: 
-            - "8081:80"
-            - "8082:443"
-          volumes_from:
-            - storage
-            - log
-         
-        db:
-          image: tanaka0323/mariadb
-          environment:
-            ROOT_PASSWORD: secret
-            DB_NAME: wordpress
-            DB_USER: wpuser
-            DB_PASSWORD: wppass
-          volumes_from:
-            - storage
-            - log
-         
-        storage:
-          image: tanaka0323/wordpress
-          volumes:
-            - /var/www/html
-            - /var/lib/mysql
+    web:
+      image: tanaka0323/nginx-php
+      links:
+        - db
+      ports:
+        - "8081:80"
+        - "8082:443"
+      volumes_from:
+        - storage
+        - log
+    db:
+      image: tanaka0323/mariadb
+      environment:
+        ROOT_PASSWORD: secret
+        DB_NAME: wordpress
+        DB_USER: wpuser
+        DB_PASSWORD: wppass
+      volumes_from:
+        - storage
+        - log
 
-        log:
-          image: tanaka0323/syslog
-          volumes:
-            - /dev
-            - /var/log
+    storage:
+      image: tanaka0323/wordpress
+      volumes:
+        - /var/www/html
+        - /var/lib/mysql
 
+    log:
+      image: tanaka0323/syslog
+      volumes:
+        - /dev
+        - /var/log
