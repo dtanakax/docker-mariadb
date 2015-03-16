@@ -21,9 +21,9 @@ RUN yum install -y mariadb-server hostname pwgen supervisor
 RUN yum clean all
 
 # Adding the configuration file
-ADD start.sh /start.sh
-ADD my.cnf /etc/my.cnf
-ADD supervisord.conf /etc/
+COPY start.sh /start.sh
+COPY my.cnf /etc/my.cnf
+COPY supervisord.conf /etc/
 RUN chmod 755 /start.sh
 RUN chmod 664 /etc/my.cnf
 
