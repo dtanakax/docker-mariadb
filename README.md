@@ -1,3 +1,5 @@
+![mariadb 5.5.41](https://img.shields.io/badge/mariadb-5.5.41-brightgreen.svg) ![License MIT](https://img.shields.io/badge/license-MIT-blue.svg)
+
 # docker-mariadb
 
 ### Base Docker Image
@@ -23,13 +25,13 @@ git pull後に
 
 データベースの作成と起動
 
-    $ docker run -d --name <name> \
-                 -p 3306:3306 \
-                 -v /tmp/mariadb:/var/lib/mysql \ # 詳細は下記のデータの永続化について
-                 -e ROOT_PASSWORD="password" \
-                 -e DB_NAME="demodb" \
-                 -e DB_USER="demo" \
-                 -e DB_PASSWORD="demopassword" \
+    $ docker run -d --name <name>
+                 -p 3306:3306
+                 -v /tmp/mariadb:/var/lib/mysql
+                 -e ROOT_PASSWORD="password"
+                 -e DB_NAME="demodb"
+                 -e DB_USER="demo"
+                 -e DB_PASSWORD="demopassword"
                  -ti <tag>/mariadb
 
 コンテナ内へログイン
@@ -127,3 +129,8 @@ git pull後に
       image: tanaka0323/syslog
       volumes:
         - /var/log
+
+### License
+
+MIT
+
