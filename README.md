@@ -126,5 +126,4 @@ git pull後に
     log:
       image: tanaka0323/syslog
       volumes:
-        - /dev
         - /var/log
