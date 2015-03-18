@@ -106,7 +106,7 @@ git pull後に
         - "8081:80"
         - "8082:443"
       volumes_from:
-        - storage
+        - wordpress
         - log
     db:
       image: tanaka0323/mariadb
@@ -116,17 +116,17 @@ git pull後に
         DB_USER: wpuser
         DB_PASSWORD: wppass
       volumes_from:
-        - storage
+        - wordpress
         - log
 
-    storage:
+    wordpress:
       image: tanaka0323/wordpress
       volumes:
         - /var/www/html
         - /var/lib/mysql
 
     log:
-      image: tanaka0323/syslog
+      image: tanaka0323/storage
       volumes:
         - /var/log
 
