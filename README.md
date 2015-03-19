@@ -96,19 +96,7 @@ git pull後に
 
 [Figとは](http://www.fig.sh/ "Figとは")  
 
-記述例
-
-    db:
-      image: tanaka0323/mariadb
-      ports:
-        - "3306:3306"
-      environment:
-        ROOT_PASSWORD: secret
-        DB_NAME: demo
-        DB_USER: demouser
-        DB_PASSWORD: demopass
-      volumes_from:
-        - storage
+[設定ファイル記述例](https://bitbucket.org/tanaka0323/fig-examples "設定ファイル記述例")
 
 ### License
 
