@@ -98,17 +98,17 @@ git pull後に
 
 記述例
 
-  db:
-    image: tanaka0323/mariadb
-    ports:
-      - "3306:3306"
-    environment:
-      ROOT_PASSWORD: secret
-      DB_NAME: demo
-      DB_USER: demouser
-      DB_PASSWORD: demopass
-    volumes_from:
-      - storage
+    db:
+      image: tanaka0323/mariadb
+      ports:
+        - "3306:3306"
+      environment:
+        ROOT_PASSWORD: secret
+        DB_NAME: demo
+        DB_USER: demouser
+        DB_PASSWORD: demopass
+      volumes_from:
+        - storage
 
 ### License
 
