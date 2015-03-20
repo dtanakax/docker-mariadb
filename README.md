@@ -8,7 +8,7 @@
 
 ### 説明
 
-MariaDB(MySQL)Dockerコンテナイメージです。
+MariaDB(MySQL)Docker コンテナイメージです。
 
 [Dockerとは？](https://docs.docker.com/ "Dockerとは？")  
 [Docker Command Reference](https://docs.docker.com/reference/commandline/cli/ "Docker Command Reference")
