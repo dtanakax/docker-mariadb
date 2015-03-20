@@ -1,5 +1,5 @@
 # Set the base image
-FROM tanaka0323/centosjp:latest
+FROM debian:wheezy
 
 # File Author / Maintainer
 MAINTAINER tanaka@infocorpus.com
@@ -8,24 +8,16 @@ MAINTAINER tanaka@infocorpus.com
 # regardless of whatever dependencies get added
 RUN groupadd -r mysql && useradd -r -g mysql mysql
 
-# Yum update
-RUN yum -y update
+RUN apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 0xcbcb082a1bb943db && echo 'deb http://ftp.osuosl.org/pub/mariadb/repo/5.5/debian wheezy main' > /etc/apt/sources.list.d/mariadb.list
 
-# Add EPEL Repository
-RUN yum install -y epel-release
-
-# Installing tools
-RUN yum install -y mariadb-server hostname pwgen supervisor
-
-# Yum clean up
-RUN yum clean all
+RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -yq procps mariadb-server hostname pwgen supervisor
 
 # Adding the configuration file
 COPY start.sh /start.sh
-COPY my.cnf /etc/my.cnf
+COPY my.cnf /my.cnf
 COPY supervisord.conf /etc/
 RUN chmod 755 /start.sh
-RUN chmod 664 /etc/my.cnf
+RUN chmod 664 /my.cnf
 
 # Create a directory for the source code.
 RUN mkdir -p /var/log/mariadb && \

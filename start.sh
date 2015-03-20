@@ -12,6 +12,7 @@ if [ ! -d $VOLUME_HOME/mysql ]; then
 
     echo "=> Installing MariaDB ..."
     mysql_install_db
+    mv -f /my.cnf /etc/mysql/my.cnf
     chown -R mysql:mysql $VOLUME_HOME
     /usr/bin/mysqld_safe > /dev/null 2>&1 &
     mysqladmin --silent --wait=36 ping || exit 1
