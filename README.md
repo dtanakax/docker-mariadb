@@ -4,11 +4,11 @@
 
 ### Base Docker Image
 
-[tanaka0323/centosjp](https://bitbucket.org/tanaka0323/docker-centosjp "tanaka0323/centosjp")
+[debian:wheezy](https://registry.hub.docker.com/_/debian/ "debian:wheezy")
 
 ### 説明
 
-tanaka0323/centosjpへMariaDB(MySQL)を追加したDockerコンテナイメージです。
+MariaDB(MySQL)Dockerコンテナイメージです。
 
 [Dockerとは？](https://docs.docker.com/ "Dockerとは？")  
 [Docker Command Reference](https://docs.docker.com/reference/commandline/cli/ "Docker Command Reference")
