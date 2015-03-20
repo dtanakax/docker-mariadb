@@ -4,13 +4,15 @@ FROM debian:wheezy
 # File Author / Maintainer
 MAINTAINER tanaka@infocorpus.com
 
+ENV DEBIAN_FRONTEND noninteractive
+
 # add our user and group first to make sure their IDs get assigned consistently, 
 # regardless of whatever dependencies get added
 RUN groupadd -r mysql && useradd -r -g mysql mysql
 
 RUN apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 0xcbcb082a1bb943db && echo 'deb http://ftp.osuosl.org/pub/mariadb/repo/5.5/debian wheezy main' > /etc/apt/sources.list.d/mariadb.list
 
-RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -yq procps mariadb-server hostname pwgen supervisor
+RUN apt-get update && apt-get install -yq procps mariadb-server hostname pwgen supervisor
 
 # Adding the configuration file
 COPY start.sh /start.sh
