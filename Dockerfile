@@ -26,7 +26,7 @@ RUN mkdir -p /var/log/mariadb && \
     mkdir -p /var/lib/mysql
 
 # Define mountable directories.
-VOLUME ["/var/lib/mysql", "/var/log/mariadb"]
+VOLUME ["/etc/mysql/"]
 
 # Set the port to 3306
 EXPOSE 3306
