@@ -21,9 +21,11 @@ COPY supervisord.conf /etc/
 RUN chmod 755 /start.sh
 RUN chmod 664 /my.cnf
 
-# Create a directory for the source code.
-RUN mkdir -p /var/log/mariadb && \
-    mkdir -p /var/lib/mysql
+RUN mkdir -p /var/log/mariadb/
+
+# forward request and error logs to docker log collector
+RUN ln -sf /dev/stdout /var/log/mariadb/general.log
+RUN ln -sf /dev/stderr /var/log/mariadb/error.log
 
 # Define mountable directories.
 VOLUME ["/etc/mysql"]
