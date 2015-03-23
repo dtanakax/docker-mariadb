@@ -25,13 +25,13 @@ git pull後に
 
 データベースの作成と起動
 
-    $ docker run -d --name <name>
-                 -p 3306:3306
-                 -v /tmp/mariadb:/var/lib/mysql
-                 -e ROOT_PASSWORD="password"
-                 -e DB_NAME="demodb"
-                 -e DB_USER="demo"
-                 -e DB_PASSWORD="demopassword"
+    $ docker run -d --name <name> \
+                 -p 3306:3306 \
+                 -v /tmp/mariadb:/var/lib/mysql \
+                 -e ROOT_PASSWORD="password" \
+                 -e DB_NAME="demodb" \
+                 -e DB_USER="demo" \
+                 -e DB_PASSWORD="demopassword" \
                  -ti <tag>/mariadb
 
 コンテナ内へログイン
