@@ -2,8 +2,6 @@
 set -e
 
 ROOT_PASSWORD=${ROOT_PASSWORD:-$(pwgen -s -1 16)}
-DB_NAME=${DB_NAME:-demodb}
-DB_USER=${DB_USER:-demo}
 DB_PASSWORD=${DB_PASSWORD:-$(pwgen -s -1 16)}
 
 VOLUME_HOME="/var/lib/mysql"

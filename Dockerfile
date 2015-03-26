@@ -6,6 +6,12 @@ MAINTAINER Daisuke Tanaka, tanaka@infocorpus.com
 
 ENV DEBIAN_FRONTEND noninteractive
 
+# Environment variables
+ENV ROOT_PASSWORD   password
+ENV DB_NAME         demodb
+ENV DB_USER         demo
+ENV DB_PASSWORD     demopassword
+
 # add our user and group first to make sure their IDs get assigned consistently, 
 # regardless of whatever dependencies get added
 RUN groupadd -r mysql && useradd -r -g mysql mysql
