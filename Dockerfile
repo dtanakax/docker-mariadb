@@ -43,4 +43,4 @@ EXPOSE 3306
 ENV TERM dumb
 
 # Executing sh
-CMD ["/bin/bash", "/start.sh"]
+ENTRYPOINT ./start.sh
