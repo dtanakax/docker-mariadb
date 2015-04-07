@@ -4,14 +4,14 @@
 
 ### Base Docker Image
 
-[debian:wheezy](https://registry.hub.docker.com/_/debian/ "debian:wheezy")
+[debian:wheezy](https://registry.hub.docker.com/_/debian/)
 
 ### 説明
 
 MariaDB(MySQL) Docker コンテナイメージです。
 
-[Dockerとは？](https://docs.docker.com/ "Dockerとは？")  
-[Docker Command Reference](https://docs.docker.com/reference/commandline/cli/ "Docker Command Reference")
+[Dockerとは？](https://docs.docker.com/)  
+[Docker Command Reference](https://docs.docker.com/reference/commandline/cli/)
 
 ### 使用方法
 
@@ -93,9 +93,9 @@ git pull後に
 
 ### Figでの使用方法
 
-[Figとは](http://www.fig.sh/ "Figとは")  
+[Figとは](http://www.fig.sh/)  
 
-[設定ファイル記述例](https://bitbucket.org/tanaka0323/fig-examples "設定ファイル記述例")
+[設定ファイル記述例](https://bitbucket.org/tanaka0323/fig-examples)
 
 ### License
 
