@@ -21,7 +21,7 @@ git pull後に
 
 イメージ作成
 
-    $ docker build -t <tag>/mariadb .
+    $ docker build -t tanaka0323/mariadb .
 
 データベースの作成と起動
 
@@ -32,7 +32,7 @@ git pull後に
                  -e DB_NAME="demodb" \
                  -e DB_USER="demo" \
                  -e DB_PASSWORD="demopassword" \
-                 -ti <tag>/mariadb
+                 -ti tanaka0323/mariadb
 
 コンテナ内へログイン
 
