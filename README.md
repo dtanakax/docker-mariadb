@@ -1,4 +1,4 @@
-![mariadb 5.5.41](https://img.shields.io/badge/mariadb-5.5.41-brightgreen.svg) ![License MIT](https://img.shields.io/badge/license-MIT-blue.svg)
+![mariadb 5.5.42](https://img.shields.io/badge/mariadb-5.5.42-brightgreen.svg) ![License MIT](https://img.shields.io/badge/license-MIT-blue.svg)
 
 # docker-mariadb
 
