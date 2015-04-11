@@ -1,19 +1,23 @@
 ![mariadb 5.5.42](https://img.shields.io/badge/mariadb-5.5.42-brightgreen.svg) ![License MIT](https://img.shields.io/badge/license-MIT-blue.svg)
 
-# docker-mariadb
+docker-mariadb
+=====================
 
-### Base Docker Image
+Base Docker Image
+---------------------
 
 [debian:wheezy](https://registry.hub.docker.com/_/debian/)
 
-### 説明
+説明
+---------------------
 
 MariaDB(MySQL) Docker コンテナイメージです。
 
 [Dockerとは？](https://docs.docker.com/)  
 [Docker Command Reference](https://docs.docker.com/reference/commandline/cli/)
 
-### 使用方法
+使用方法
+---------------------
 
 git pull後に
 
@@ -38,20 +42,23 @@ git pull後に
 
     $ docker exec -ti <name> bash
 
-### 環境変数
+環境変数
+---------------------
 
-- <code>ROOT_PASSWORD</code>root ユーザーパスワード。指定しない場合は実行時ランダムパスワードが生成され、コンテナ実行時に表示されます。
-- <code>DB_NAME</code>作成するデータベース名。指定しない場合は作成されません。
-- <code>DB_USER</code>DB_NAMEへアクセス可能なユーザー名。
-- <code>DB_PASSWORD</code>ユーザーパスワード。指定しない場合は空パスワードになります。
+- `ROOT_PASSWORD`root ユーザーパスワード。指定しない場合は実行時ランダムパスワードが生成され、コンテナ実行時に表示されます。
+- `DB_NAME`作成するデータベース名。指定しない場合は作成されません。
+- `DB_USER`DB_NAMEへアクセス可能なユーザー名。
+- `DB_PASSWORD`ユーザーパスワード。指定しない場合は空パスワードになります。
 
-### 利用可能なボリューム
+利用可能なボリューム
+---------------------
 
 以下のボリュームが利用可能
 
     /etc/mysql          # MariaDB設定
 
-### データの永続化について
+データの永続化について
+---------------------
 
 - ホストの/tmp/mariadbフォルダへデータを永続化する方法
 
@@ -69,11 +76,11 @@ git pull後に
 
     イメージ作成
 
-        docker build -t <tag>/storage .
+        docker build -t tanaka0323/storage .
 
     起動
 
-        docker run --name <mystorage> -ti <tag>/storage
+        docker run --name <mystorage> -ti tanaka0323/storage
 
     以下一行でも可能
 
@@ -83,21 +90,24 @@ git pull後に
 
         --volumes-from <mystorage>
 
-### 他コンテナとのリンク
+他コンテナとのリンク
+---------------------
 
 以下のように他コンテナへデータベースコンテナをリンクすることができます。  
 
-    $ docker run -ti -link mariadb:db <tag>/centosjp bash
+    $ docker run -ti -link mariadb:db tanaka0323/centosjp bash
 
 -link mariadb:dbは、他コンテナにdbエイリアスを追加します。
 
-### Docker Composeでの使用方法
+Docker Composeでの使用方法
+---------------------
 
 [Docker Composeとは](https://docs.docker.com/compose/)  
 
 [設定ファイル記述例](https://bitbucket.org/tanaka0323/compose-examples)
 
-### License
+License
+---------------------
 
 The MIT License
 Copyright (c) 2015 Daisuke Tanaka
