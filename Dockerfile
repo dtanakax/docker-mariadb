@@ -19,7 +19,8 @@ RUN echo "deb http://ftp.yz.yamagata-u.ac.jp/pub/dbms/mariadb/repo/$MARIADB_MAJO
 
 RUN apt-get update && \
     apt-get -y install mariadb-server=$MARIADB_VERSION libmysqlclient18=$MARIADB_VERSION mysql-common=$MARIADB_VERSION pwgen && \
-    rm -rf /var/lib/apt/lists/*
+    rm -rf /var/lib/apt/lists/* && \
+    apt-get clean
 
 # Adding the configuration file
 COPY start.sh /start.sh
