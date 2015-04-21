@@ -43,11 +43,12 @@ ENV DB_PASSWORD     demopassword
 # Define mountable directories.
 VOLUME ["/etc/mysql"]
 
+ENTRYPOINT ["./start.sh"]
+
 # Set the port to 3306
 EXPOSE 3306
 
 # Set TERM environment variable.
 ENV TERM dumb
 
-# Executing sh
-ENTRYPOINT ./start.sh
+CMD ["/usr/bin/mysqld_safe"]
