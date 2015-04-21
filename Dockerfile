@@ -41,7 +41,7 @@ ENV DB_USER         demo
 ENV DB_PASSWORD     demopassword
 
 # Define mountable directories.
-VOLUME ["/etc/mysql"]
+VOLUME ["/var/lib/mysql", "/etc/mysql"]
 
 ENTRYPOINT ["./start.sh"]
 

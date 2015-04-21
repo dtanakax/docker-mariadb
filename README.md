@@ -55,6 +55,7 @@ git pull後に
 
 以下のボリュームが利用可能
 
+    /var/lib/mysql      # データ領域
     /etc/mysql          # MariaDB設定
 
 データの永続化について
