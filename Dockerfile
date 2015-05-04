@@ -13,7 +13,7 @@ RUN groupadd -r mysql && useradd -r -g mysql mysql
 RUN apt-key adv --keyserver pool.sks-keyservers.net --recv-keys 199369E5404BD5FC7D2FE43BCBCB082A1BB943DB
 
 ENV MARIADB_MAJOR 5.5
-ENV MARIADB_VERSION 5.5.42+maria-1~wheezy
+ENV MARIADB_VERSION 5.5.43+maria-1~wheezy
 
 RUN echo "deb http://ftp.yz.yamagata-u.ac.jp/pub/dbms/mariadb/repo/$MARIADB_MAJOR/debian wheezy main" > /etc/apt/sources.list.d/mariadb.list
 
